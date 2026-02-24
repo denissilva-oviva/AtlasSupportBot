@@ -5,7 +5,7 @@ A Google Chat bot (Google Apps Script) for support triage and investigation. It 
 ## Overview
 
 - **Entrypoint:** `Code.js` — Chat event handlers and queue-based async processing
-- **Agents:** Support Engineer (triage/handoff) and Senior Engineer (deep technical investigation)
+- **Agents:** Support Engineer (triage/handoff), Senior Engineer (deep technical investigation), SRE Engineer (infrastructure/incident)
 - **Prompts:** Stored in `.html` files and loaded via `Prompts.js`
 - **Tools:** Freshdesk, Jira, Confluence, GitHub, GCP Logs/Monitoring (see `Tool*.js`)
 
@@ -23,6 +23,7 @@ flowchart LR
     Router[Router]
     SE[Support Engineer]
     SrE[Senior Engineer]
+    SRE[SRE Engineer]
     QA[ReasoningAgent]
   end
   subgraph Tools
@@ -37,6 +38,7 @@ flowchart LR
   Agent --> Router
   Router --> SE
   Router --> SrE
+  Router --> SRE
   SE --> FD
   SE --> Jira
   SE --> CF
@@ -44,8 +46,13 @@ flowchart LR
   SrE --> Jira
   SrE --> CF
   SrE --> GCP
+  SRE --> FD
+  SRE --> Jira
+  SRE --> CF
+  SRE --> GCP
   SE --> QA
   SrE --> QA
+  SRE --> QA
   QA --> Agent
 ```
 
