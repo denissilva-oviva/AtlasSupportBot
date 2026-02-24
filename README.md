@@ -35,6 +35,7 @@ flowchart LR
     Jira[Jira]
     CF[Confluence]
     GCP[GCP Logs]
+    Mon[GCP Monitoring]
   end
   Chat --> Code
   Code --> Queue
@@ -54,6 +55,7 @@ flowchart LR
   SRE --> Jira
   SRE --> CF
   SRE --> GCP
+  SRE --> Mon
   SE --> QA
   SrE --> QA
   SRE --> QA
@@ -82,7 +84,7 @@ flowchart LR
 | `ToolGitHub.js` | GitHub search (org-scoped) |
 | `ToolGCloudLogs.js` | Cloud Logging log queries |
 | `ToolKubernetes.js` | K8s pod events, deployment events, discover pods (via Cloud Logging) |
-| `ToolGCloudMonitoring.js` | Restart count, resource usage, restart count all |
+| `ToolGCloudMonitoring.js` | **GCP Monitoring:** container restart count, CPU/memory/uptime metrics, restart count across all containers in an environment (SRE agent only) |
 | `ChatHelpers.js` | Reply in thread, strip bot mention, thread history |
 | `Debug.js` | `debugLog(tag, message, detail)`, `firstNWords()` for safe logging |
 
