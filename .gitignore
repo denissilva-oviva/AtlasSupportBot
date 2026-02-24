@@ -1,0 +1,21 @@
+# macOS
+.DS_Store
+
+# Node
+node_modules/
+
+# Environment & secrets
+.env
+.env.*
+
+# Clasp user credentials (usually in ~, but just in case)
+.clasprc.json
+
+# Cursor IDE – session-specific plans
+.cursor/plans/
+
+# BMAD output artifacts
+_bmad-output/
+
+# Logs
+*.log

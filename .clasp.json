@@ -1,0 +1,18 @@
+{
+  "scriptId": "1XGw91Bs9F5EcCbRix9OLweuw056-EZWPvPO4VfjWwL995b_UR1SNtv1B",
+  "projectId": "denis-dss-playground",
+  "rootDir": "",
+  "scriptExtensions": [
+    ".js",
+    ".gs"
+  ],
+  "htmlExtensions": [
+    ".html",
+    ".md"
+  ],
+  "jsonExtensions": [
+    ".json"
+  ],
+  "filePushOrder": [],
+  "skipSubdirectories": false
+}

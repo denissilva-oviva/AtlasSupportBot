@@ -1,0 +1,20 @@
+---
+description: All prompts must be defined in .html files for evolution and editing
+alwaysApply: true
+---
+
+# Prompts in HTML
+
+All prompts in this project must be defined in `.html` files (like `SystemPrompt.html`) to facilitate evolution and editing.
+
+## Rules
+
+1. **Do not add new long prompt strings or multi-line prompt arrays in `.js` files.** Prompt text belongs in HTML.
+
+2. **Define prompts in `.html` files** and load them via `HtmlService.createTemplateFromFile()` from `Prompts.js`:
+   - Use `buildSystemPrompt(senderEmail)` for the main agent (template variables: `requesterContext`, `ticketPolicy`).
+   - Use `getPromptFromHtml(basename)` for static prompts (e.g. `getPromptFromHtml("ReasoningPrompt")`).
+
+3. **When a prompt needs dynamic parts**, use template variables in the HTML (e.g. `<?= variableName ?>`) and set them on the template object before calling `evaluate().getContent()`.
+
+4. **When adding a new agent or prompt**, create a new `.html` file (e.g. `MyAgentPrompt.html`), add the prompt content there, and load it from the agent via `getPromptFromHtml("MyAgentPrompt")` or via a dedicated builder in `Prompts.js` if template variables are needed.
